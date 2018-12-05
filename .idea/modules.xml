@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/virtual-museams.iml" filepath="$PROJECT_DIR$/virtual-museams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/virtual_museams.iml" filepath="$PROJECT_DIR$/virtual_museams.iml" />
     </modules>
   </component>
 </project>

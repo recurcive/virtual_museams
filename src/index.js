@@ -11,7 +11,8 @@ const routing = (
   <BrowserRouter>
     <div>
       <Route exact path="/" component={App} />
-      <Route path="/kr" component={Region} />
+      {/*<Route path="/regions/" component={Region} />*/}
+      <Route path='/regions/:code' component={props => <Region {...props}/>}/>
     </div>
   </BrowserRouter>
 )
