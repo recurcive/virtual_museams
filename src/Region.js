@@ -29,19 +29,43 @@ const szMuseams = [
 
 ];
 
-function RowMuseam() {
-  <Row>
-    <Col/>
-  </Row>
+const Museam = ( {museam} ) => {
+  return (
+      <Col>
+        <b>{museam.name}</b><p>{museam.link}</p>
+      </Col>
+  );
+};
+
+const MuseamRow = ( {museamRow} ) => {
+  console.log(museamRow);
+  return (
+      <Row>
+        {/*museamRow.map( mus => <Museam museam={mus}/> )*/}
+        {museamRow.map(mus => <Museam museam={mus}/>)}
+      </Row>
+  );
 };
 
 
 function Region({ match }) {
 
-  console.log('match ->' + match.params.code + szMuseams.length);
-  // szMuseams.map((museam) => {return <h1>{museam.name}</h1>});
-    // return <h1>Hello {match.params.code}</h1>
-  return szMuseams.map((museam) => {return <h1>{museam.name}</h1>});
+  // console.log('match ->' + match.params.code + szMuseams.length);
+  // return szMuseams.map((museam) => {return <h1>{museam.name}</h1>});
+  return (
+    <Grid>
+        {
+          szMuseams.reduce((pairs, museam, index) => {
+          if (index % 2 === 0) {
+            pairs.push([])
+          }
+            pairs[pairs.length - 1].push(museam);
+
+          return pairs;
+        }, []).map( pair => (<MuseamRow museamRow={pair}/>))
+        };
+    </Grid>
+  )
 }
 
 export default Region;
