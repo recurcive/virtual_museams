@@ -79,7 +79,6 @@ class Region extends Component {
                         backgroundRepeat: 'no-repeat',
 
                       }}>
-            <div style={styles.content}>
             <h1>{ regionName[params.code] }</h1>
             <hr align="center" color="Red" />
 
@@ -110,7 +109,6 @@ class Region extends Component {
 
 
             </Grid>
-            </div>
 
         </div>
 
